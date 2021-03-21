@@ -30,55 +30,8 @@ namespace DotnetChallenge
             Console.WriteLine("==================================== Raw Object ============================");
             Console.WriteLine(data);
 
-            var invalidKeys = new List<string>();
-
-            // foreach (var x in data)
-            // {
-            //     string name = x.Key;
-            //     JToken value = x.Value;
-
-            //     if (value.GetType() == typeof(JObject))
-            //     {
-            //         // the object is a JObject
-            //         // var stringValue = value.Value.ToString();
-            //         // if(string.IsNullOrEmpty(stringValue) || stringValue.Equals("-") ||
-            //         //     stringValue.Equals("N/A"))
-            //         // {
-            //         //     value
-            //         // }
-            //     }
-            //     else if (value.GetType() == typeof(JValue))
-            //     {
-            //         // the object is a JValue
-            //         if(string.IsNullOrEmpty(value.ToString()) || value.ToString().Equals("-") ||
-            //             value.ToString().  Equals("N/A"))
-            //         {
-            //             invalidKeys.Add(name);
-            //             // value.Remove();
-            //         }
-            //     }
-            //     else if (value.GetType() == typeof(JArray))
-            //     {
-            //         // Console.WriteLine(value);
-
-            //         foreach (var item in value)
-            //         {
-            //             Console.WriteLine(value.GetType());
-            //         }
-
-            //         // the object is a JArray
-            //     }
-
-            //     // Console.WriteLine(value.GetType());
-            // }
-
-            // foreach(var key in invalidKeys) {
-            //     data.Remove(key);
-            // }
-
             Console.WriteLine("==================================== Output ============================");
             Console.WriteLine(CleanJObject(data));
-            // Console.WriteLine(data);
 
             response.Close();
         }
@@ -128,8 +81,6 @@ namespace DotnetChallenge
                     {
                         ((JArray) value).Remove(item);
                     }
-
-                    // Console.WriteLine(value.GetType());
                 }
 
             }
